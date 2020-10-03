@@ -6,10 +6,18 @@ import './assets/css/global.css'
 import less from 'less'
 import axios from 'axios'
 import TreeTable from 'vue-table-with-tree-grid'
+
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 axios.defaults.baseURL = 'http://127.0.0.1:7000/api/private/v1/'
 axios.interceptors.request.use(config => {
   console.log(config)
+  NProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
+axios.interceptors.response.use(config => {
+  NProgress.done()
   return config
 })
 Vue.prototype.$http = axios
