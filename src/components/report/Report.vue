@@ -19,6 +19,10 @@ export default {
     }
   },
   created () {
+<<<<<<< HEAD
+=======
+
+>>>>>>> login
   },
   mounted () {
     // 基于准备好的dom，初始化echarts实例
@@ -33,7 +37,7 @@ export default {
         data: ['销量']
       },
       xAxis: {
-        data: ['衬衫', '羊毛衫', '雪纺衫', '牛仔裤', '高跟鞋', '袜子']
+        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
       },
       yAxis: {},
       series: [{
